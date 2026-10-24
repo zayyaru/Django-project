@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{%block body %}
+<!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-3 text-white animated slideInRight">Services</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb animated slideInRight mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+     <!-- Service Start -->
+     <div class="container-xxl py-5">
+         <div class="container">
+             <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                 <p class="fw-medium text-uppercase text-primary mb-2">Our Services</p>
+                 <h1 class="display-5 mb-4">We Provide Best Industrial Services</h1>
+                </div>
+
+                
+                
+                <div class="row gy-5 gx-4">
+                    {% for i in service %}
+                    
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        
+                        
+                        <div class="service-item">
+                            <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                        <div class="service-img">
+                            <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                        </div>
+                        
+                        <div class="service-detail">
+                            <div class="service-title">
+                                <hr class="w-25">
+                                <h3 class="mb-0">{{ i.title }}</h3>
+                                <hr class="w-25">
+                            </div>
+                            <div class="service-text">
+                                <p class="text-white mb-0">{{ i.dec }}</p>
+                            </div>
+                        </div>
+                        
+                        
+                        <a class="btn btn-light" href="">Read More</a>
+                        
+                        
+                    </div>
+                    
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+   
+    <!-- Testimonial Start -->
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <p class="fw-medium text-uppercase text-primary mb-2">Testimonial</p>
+            <h1 class="display-5 mb-5">What Our Clients Say!</h1>
+        </div>
+        
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                {% for i in testimonial %}
+                
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-img position-relative">
+                        <img class="img-fluid rounded-circle mx-auto mb-5" src="{{ i.image.url }}">
+                        <div class="btn-square bg-primary rounded-circle">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-text text-center rounded p-4">
+                        <p>{{ i.dec }}</p>
+                        <h5 class="mb-1">{{ i.name }}</h5>
+                        <span class="fst-italic">{{ i.profession }}</span>
+                    </div>
+                </div>
+                
+                {% endfor %}
+            </div>
+          
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+{% endblock %}
